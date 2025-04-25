@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1> Resumidor </h1>
+<p> Esta página está dedicada como una zona de pruebas para la IA utilizada con el fin de generar resúmenes de artículos 
+    recibidos. Prueba ingresando algún artículo de su interés:</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Resumir</button>
+    </form>
+<p></p>
+    {% if resumen %}
+        <h2>Resumen generado: </h2>
+        <p>{{ resumen }}<p/>
+    {% endif %}
+
+{% endblock %}

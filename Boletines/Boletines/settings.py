@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'HomePage',
     'scraping',
-    'IA'
+    'IA',
+    'Article_Summarizer'
 ]
 
 MIDDLEWARE = [
