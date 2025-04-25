@@ -26,11 +26,12 @@ Puede acceder a la Wiki mediante este [enlace](https://github.com/Elweon665/GRUP
 2. Instalar la última versión de [Django](https://www.djangoproject.com/).
 3. Descargar y descomprimir el [ZIP](https://github.com/Elweon665/GRUPO07-2024-PROYINF/archive/refs/heads/main.zip) del reprositorio.
 4. Abrír la terminal en la dirección de la carpeta descomprimida.
-5. En *pyvenv.cfg*, cambiar %USER% por el usuario local de su sistema computacional.
-6. Ejecutar `Set-ExecutionPolicy Unrestricted -Scope Process`
+5. Ejecutar `Set-ExecutionPolicy Unrestricted -Scope Process`
+6. Crear un entorno virtual ejecutando `python -m venv .venv`
 7. Ejecutar `.\Scripts\activate`.
-8. Ejecutar `python .\Boletines\manage.py runserver`.
-9. Acceder a _http://127.0.0.1:8000/_ desde cualquier navegador y listo!
+8. Instalar las dependencias del proyecto ejecutando `pip install -r requirements.txt`
+9. Ejecutar `python .\Boletines\manage.py runserver`.
+10. Acceder a _http://127.0.0.1:8000/_ desde cualquier navegador y listo!
 
 
 Se continuara el proyecto en Ingenieria de Software(INF225) como grupo 17 compuesto por los mismos integrantes.
