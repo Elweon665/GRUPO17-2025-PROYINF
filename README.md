@@ -26,10 +26,10 @@ Puede acceder a la Wiki mediante este [enlace](https://github.com/Elweon665/GRUP
 2. Instalar la última versión de [Django](https://www.djangoproject.com/).
 3. Descargar y descomprimir el [ZIP](https://github.com/Elweon665/GRUPO07-2024-PROYINF/archive/refs/heads/main.zip) del reprositorio.
 4. Abrír la terminal en la dirección de la carpeta descomprimida.
-5. Ejecutar `Set-ExecutionPolicy Unrestricted -Scope Process`
-6. Crear un entorno virtual ejecutando `python -m venv .venv`
+5. Ejecutar `Set-ExecutionPolicy Unrestricted -Scope Process`.
+6. Crear un entorno virtual ejecutando `python -m venv .venv` (Este paso solo se tiene que hacer una única vez, no es necesario repetirlo cuando se actualice el repositorio).
 7. Ejecutar `.\Scripts\activate`.
-8. Instalar las dependencias del proyecto ejecutando `pip install -r requirements.txt`
+8. Instalar las dependencias del proyecto ejecutando `pip install -r requirements.txt`.
 9. Ejecutar `python .\Boletines\manage.py runserver`.
 10. Acceder a _http://127.0.0.1:8000/_ desde cualquier navegador y listo!
 
