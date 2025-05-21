@@ -1,0 +1,95 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Administración de Artículos</h1>
+<h2>Insertar Manualmente Artículos nuevos</h2>
+<br>
+<table class="table table-bordered">
+    <form method="post">
+    {% csrf_token %}
+
+    <div>
+        {{ form.title.label_tag }}<br>
+        {{ form.title }}
+    </div>
+
+    <div>
+        {{ form.link.label_tag }}<br>
+        {{ form.link }}
+    </div>
+
+    <div>
+        {{ form.content.label_tag }}<br>
+        {{ form.content }}
+    </div>
+
+    <div>
+        {{ form.summary.label_tag }}<br>
+        {{ form.summary }}
+    </div>
+
+    <button type="submit">Enviar</button>
+    <form>
+    {% if send %}
+    El Artículo se ha ingresado exitosamente en la base de datos
+    {% endif %}
+    {% if error %}
+    Ha habido un error en el formulario.
+    {% endif %}
+</table>
+<br>
+
+<h2>Revisar Resúmenes</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Url</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for scrap in page_obj %}
+        <tr>
+            <td>{{ scrap.title }}</td>
+            <td>
+              <div class="d-flex justify-content-center">
+                <a href="{{ scrap.link }}" class="btn btn-primary">Ver</a>
+              </div>
+            </td>
+            <td>
+              <div class="d-flex justify-content-center">
+                <a href="{% url 'editar_articulo' scrap.id %}" class="btn btn-success">Editar entrada</a>
+              </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="pagination">
+  <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}:&nbsp;</span><br>
+
+  {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;</a>
+  {% endif %}
+
+  {% for num in page_range %}
+    {% if num == "..." %}
+      ...&nbsp;
+    {% elif num == page_obj.number %}
+      <strong>{{ num }}</strong>&nbsp;
+    {% else %}
+      <a href="?page={{ num }}">{{ num }}&nbsp;</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&nbsp;&gt;</a>
+  {% endif %}
+</div>
+
+{% endblock %}

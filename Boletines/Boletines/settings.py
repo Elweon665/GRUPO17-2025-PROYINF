@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'HomePage',
     'scraping',
     'IA',
-    'Article_Summarizer'
+    'Article_Summarizer',
+    'ArticleInserter',
+    'tests'
 ]
 
 MIDDLEWARE = [
@@ -111,7 +113,7 @@ AUTH_USER_MODEL = 'HomePage.User'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 

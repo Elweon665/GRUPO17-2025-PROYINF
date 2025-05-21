@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Editando artículo ID {{ article.id }}</h1> 
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ formset.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <button type="submit" name="delete" value="true" class="btn btn-danger">Borrar artículo</button>
+</form><br>
+
+{% if message %}
+    Se han actualizado los valores en la base de datos.<br>
+{% endif %}
+
+{% endblock %}

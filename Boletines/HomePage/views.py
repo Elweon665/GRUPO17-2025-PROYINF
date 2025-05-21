@@ -10,6 +10,12 @@ from django.contrib.auth.decorators import login_required
 from .forms import CustomAuthenticationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
+from .forms import ArticleInserterForm
+from scraping.models import Scrap
+from ArticleInserter.models import Summary
+from Article_Summarizer.program.summarizer import generarResumen
+from django.core.paginator import Paginator
+
 
 def lista_boletines(request):
     pdfs = PDF.objects.all()
@@ -71,6 +77,58 @@ def register_view(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
+
+def Articulo_view(request):
+    send = False
+    scraps_list = Scrap.objects.all().order_by('-id')  
+    paginator = Paginator(scraps_list, 20)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
+    
+    current = page.number
+    total = paginator.num_pages
+    page_range = [1]
+
+    dots = False
+    for num in range(2, total + 1):
+        if num < current - 2 or num > current + 2:
+            if not dots:
+                page_range.append("...")
+                dots = True
+        else: 
+            page_range.append(num)
+            dots = False
+    
+    if page_range[-1] != total:
+        page_range.append(total)
+            
+    
+    form = ArticleInserterForm()
+    if request.method == 'POST':
+        form = ArticleInserterForm(request.POST)
+        if form.is_valid():
+            # Guardar valores en la BD y Generar resumen si es que no se ingresó
+            article = Scrap()
+            article.title = form.cleaned_data['title']
+            article.link = form.cleaned_data['link']
+            article.content = form.cleaned_data['content']
+            
+            resumen = form.cleaned_data['summary']
+            summary = Summary()
+            if not resumen:
+                summary.summary = generarResumen(article.content)
+            else:
+                summary.summary = resumen
+            article.save()
+            summary.article = article
+            summary.save()
+                
+            send = True
+        else:
+            return render(request, 'Articulos.html', {'form':form,'error':True,'page_obj':page,'page_range':page_range})
+    return render(request, 'Articulos.html', {'form':form,'send':send,'page_obj':page,'page_range':page_range})
+    
+    
 
 
 @login_required

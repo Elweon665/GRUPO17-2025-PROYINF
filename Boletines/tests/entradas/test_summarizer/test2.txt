@@ -1,0 +1,17 @@
+La Agricultura Digital se refiere al conjunto de buenas prácticas y uso de recursos tecnológicos para la optimización de los procesos agrícolas, generando conocimiento y valor para quienes se dedican a esta tarea. Se trabaja en un equilibrio entre innovación, productos digitales y soluciones resolutivas en cuanto al análisis de datos para el buen trabajo en el campo, avanzando hacia una actividad sustentable.
+
+“Desde sus inicios la agricultura ha generado gran cantidad de datos. Sin embargo, la mayor parte de ellos permanecían subutilizados. Hoy en día, las herramientas digitales permiten que los agricultores accedan a esta información y, de esta forma, puedan aprovechar las oportunidades sin precedentes que genera para aplicar mejoras que impacten positivamente en la producción agrícola”, señala Fernando González, Product Manager de Agricultura de Precisión de Salfa.
+
+Esta concepción de la agricultura se vale de avances como sensores remotos, drones, GPS y dispositivos de seguimiento para recopilar datos de los equipos en tiempo real. Un ejemplo de las nuevas herramientas digitales es el uso de sensores IoT (Internet of Things) con el cual es posible medir humedad, temperatura, riego y luminosidad.  Otro de los alcances es el análisis de datos gracias a plataformas especializadas, que aprovechan la información que proviene de los sensores, indicadores meteorológicos e historial de comportamiento del equipo, que permiten realizar diagnósticos específicos para tomar decisiones en tiempo real.
+
+Además, la agricultura digital contribuye a la optimización de recursos naturales como el agua o el uso de la tierra mediante las tecnologías que estudian las variables ambientales. “Mientras los sistemas de detección en el campo y los datos generados proporcionan mejor información para tomar decisiones oportunas, la automatización de tareas puede aumentar la fiabilidad de los procesos e incrementar su rentabilidad”, indica Fernando González, Product Manager de Agricultura de Precisión de Salfa.
+
+Según el experto, los desafíos para este cambio pasan por el constante acompañamiento que deben brindar a los agricultores, ya que la barrera principal es cultural y de conectividad en zonas rurales. Sin embargo, una vez que está el interés, la adopción es natural y gradual.
+
+La experiencia de Salfa
+
+Los clientes de Salfa pueden acceder a la agricultura digital a través de la plataforma gratuita Operations Center de John Deere, acompañado de capacitaciones del equipo de Agricultura Digital y la tecnología de las máquinas de agricultura de precisión para su óptimo uso en el campo. Cabe acotar que estas tecnologías de agricultura digital de John Deere son compatibles para todas las marcas de maquinaria.
+
+John Deere es una de las marcas líderes en la Agricultura de Precisión gracias a su amplia gama de tractores y maquinaria equipados con tecnología de última generación. El Sistema de Gestión Agrícola (AMS) ayuda a los agricultores a gestionar sus operaciones de forma más eficiente y eficaz. Incluye componentes como receptores de posición para determinar la ubicación del tractor, sistema de guiado y herramientas de gestión de datos.
+
+Desde Salfa también destacan la comunicación ISOBUS entre los distintos implementos agrícolas y tractores. Esto permite obtener datos de las labores ejecutadas por cada uno de ellos, beneficio que impacta en la toma de decisiones.

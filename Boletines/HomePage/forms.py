@@ -25,3 +25,34 @@ class UserRegistrationForm(UserCreationForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("Las contraseñas no coinciden.")
         return password2
+    
+class ArticleInserterForm(forms.Form):
+    title = forms.CharField(
+        label="Title", 
+        required=True,
+        widget=forms.TextInput(attrs={
+            'style': 'width: 100%;'
+        }))
+    
+    link = forms.URLField(
+        label="Link", 
+        required=True,
+        widget=forms.TextInput(attrs={
+            'style': 'width: 100%;'
+        }))
+    
+    content = forms.CharField(
+        label="Artículo", 
+        required=True,
+        widget=forms.Textarea(attrs={
+            'style': 'width: 100%;'
+        })
+        )
+    
+    summary = forms.CharField(
+        label="Resumen (opcional)", 
+        required=False,
+        widget=forms.Textarea(attrs={
+            'style': 'width: 100%;'
+        })
+        )
