@@ -8,5 +8,5 @@ de tokens mayor al que puede soportar la pipeline. Este problema ha sido corregi
 | #2             | Texto largo | Texto con una cantidad de<br>palabras $\leq$ a la cantidad de<br> palabras del texto original | Se revisa que el programa sea capaz de traducir<br>textos con una gran densidad de contenido <br>que sea capaz de sobrepasar el límite del modelo |
 | #3             | Texto vacio | Texto con una cantidad de<br>palabras nula | Se revisa que el programa sea capaz de no añadir<br>contenido demás en entornos vacios en caso de que<br>se entregue erróneamente un dato similar |
 | #4             | Texto en inglés | Texto con una cantidad de<br>palabras $\leq$ a la cantidad de<br> palabras del texto original<br>y en el mismo idioma | Se revisa que el programa sea capaz de traducir<br>textos de un idioma que no sea el español |
-| #5             | Texto repetido | Texto con una cantidad de<br>palabras $\leq$ a la cantidad de<br> palabras del texto original | Se revisa que el programa sea capaz de no alargar<br>textos con frases repetitivas |
+| #5             | Texto repetido | Texto con una cantidad de<br>palabras considerablemente<br> menor a la cantidad de<br>palabras del texto original | Se revisa que el programa sea capaz de no alargar<br>textos con frases repetitivas |
 
