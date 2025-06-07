@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Administración de Artículos</h1>
+<div class="d-flex justify-content-between align-items-center mb-3 w-100">
+    <h2 class="mb-0">Revisar Resúmenes</h2>
+    <a href="{% url 'insertar_articulo' %}" class="btn btn-success ms-auto">
+        Insertar nuevo artículo
+    </a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align: center;">Titulo</th>
+            <th style="text-align: center;">Url</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for scrap in page_obj %}
+        <tr>
+            <td>{{ scrap.title }}</td>
+            <td>
+              <div class="d-flex justify-content-center">
+                <a href="{{ scrap.link }}" class="btn btn-primary">Ver</a>
+              </div>
+            </td>
+            <td>
+              <div class="d-flex justify-content-center">
+                <a href="{% url 'editar_articulo' scrap.id %}" class="btn btn-success">Editar entrada</a>
+              </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="pagination">
+  <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}:&nbsp;</span><br>
+
+  {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;</a>
+  {% endif %}
+
+  {% for num in page_range %}
+    {% if num == "..." %}
+      ...&nbsp;
+    {% elif num == page_obj.number %}
+      <strong>{{ num }}</strong>&nbsp;
+    {% else %}
+      <a href="?page={{ num }}">{{ num }}&nbsp;</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&nbsp;&gt;</a>
+  {% endif %}
+</div>
+
+{% endblock %}

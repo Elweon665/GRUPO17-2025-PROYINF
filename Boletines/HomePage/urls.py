@@ -19,6 +19,5 @@ urlpatterns = [
     path('tags/', views.generar, name='generar'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
-    path('register/', views.register_view, name='register'),
-    path('articles/', views.Articulo_view, name='articles')
+    path('register/', views.register_view, name='register')
 ]

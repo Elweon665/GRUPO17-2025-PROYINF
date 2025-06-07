@@ -77,32 +77,6 @@ def register_view(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
-
-def Articulo_view(request):
-    scraps_list = Scrap.objects.all().order_by('-id')  
-    paginator = Paginator(scraps_list, 20)
-    page_number = request.GET.get('page')
-    page = paginator.get_page(page_number)
-    
-    current = page.number
-    total = paginator.num_pages
-    page_range = [1]
-
-    dots = False
-    for num in range(2, total + 1):
-        if num < current - 2 or num > current + 2:
-            if not dots:
-                page_range.append("...")
-                dots = True
-        else: 
-            page_range.append(num)
-            dots = False
-    
-    if page_range[-1] != total:
-        page_range.append(total)
-            
-    return render(request, 'Articulos.html', {'page_obj':page,'page_range':page_range})
-    
     
 
 
