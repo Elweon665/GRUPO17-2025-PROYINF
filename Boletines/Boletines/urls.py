@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('scrap/', include('scraping.urls')),
     path('resumir/', include('Article_Summarizer.urls')),
-    path('articles/<int:pk>/editar/', include('ArticleInserter.urls'))
+    path('articles/', include('ArticleInserter.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -43,3 +43,34 @@ SummaryFormSet = inlineformset_factory(
     extra=1,
     can_delete=False
 )
+
+class ArticleInserterForm(forms.Form):
+    title = forms.CharField(
+        label="Title", 
+        required=True,
+        widget=forms.TextInput(attrs={
+            'style': 'width: 100%;'
+        }))
+    
+    link = forms.URLField(
+        label="Link", 
+        required=True,
+        widget=forms.TextInput(attrs={
+            'style': 'width: 100%;'
+        }))
+    
+    content = forms.CharField(
+        label="Artículo", 
+        required=True,
+        widget=forms.Textarea(attrs={
+            'style': 'width: 100%;'
+        })
+        )
+    
+    summary = forms.CharField(
+        label="Resumen (opcional)", 
+        required=False,
+        widget=forms.Textarea(attrs={
+            'style': 'width: 100%;'
+        })
+        )

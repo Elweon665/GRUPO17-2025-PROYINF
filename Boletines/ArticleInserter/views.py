@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Scrap, Summary
-from .forms import ArticleForm, SummaryFormSet
+from .forms import ArticleForm, SummaryFormSet, ArticleInserterForm
 from Article_Summarizer.program.summarizer import generarResumen
 from django.utils import timezone
 
@@ -61,3 +61,31 @@ def editarArticulo(request, pk):
         'article': article,
         'summary':summary
     })
+    
+def insertarArticulo(request):
+    send = False
+    form = ArticleInserterForm()
+    
+    if request.method == 'POST':
+        form = ArticleInserterForm(request.POST)
+        if form.is_valid():
+            # Guardar valores en la BD y Generar resumen si es que no se ingresó
+            article = Scrap()
+            article.title = form.cleaned_data['title']
+            article.link = form.cleaned_data['link']
+            article.content = form.cleaned_data['content']
+            
+            resumen = form.cleaned_data['summary']
+            summary = Summary()
+            if not resumen:
+                summary.summary = generarResumen(article.content)
+            else:
+                summary.summary = resumen
+            article.save()
+            summary.article = article
+            summary.save()
+                
+            send = True
+        else:
+            return render(request, 'insert_article.html', {'form':form,'error':True})
+    return render(request, 'insert_article.html', {'form':form,'send':send})

@@ -11,9 +11,13 @@
         <button type="submit">Resumir</button>
     </form>
 <p></p>
-    {% if resumen %}
+    {% if has_resumen %}
         <h2>Resumen generado: </h2>
-        <p>{{ resumen }}<p/>
+        {% if resumen %}
+            <p>{{ resumen }}<p/>
+        {% else %}
+            <p style="color: red;">WARNING: El resumidor ha devuelto un string vacio.<p/>
+        {% endif %}
     {% endif %}
 
 {% endblock %}

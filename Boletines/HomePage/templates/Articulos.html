@@ -3,50 +3,18 @@
 {% block content %}
 
 <h1>Administración de Artículos</h1>
-<h2>Insertar Manualmente Artículos nuevos</h2>
-<br>
-<table class="table table-bordered">
-    <form method="post">
-    {% csrf_token %}
-
-    <div>
-        {{ form.title.label_tag }}<br>
-        {{ form.title }}
-    </div>
-
-    <div>
-        {{ form.link.label_tag }}<br>
-        {{ form.link }}
-    </div>
-
-    <div>
-        {{ form.content.label_tag }}<br>
-        {{ form.content }}
-    </div>
-
-    <div>
-        {{ form.summary.label_tag }}<br>
-        {{ form.summary }}
-    </div>
-
-    <button type="submit">Enviar</button>
-    <form>
-    {% if send %}
-    El Artículo se ha ingresado exitosamente en la base de datos
-    {% endif %}
-    {% if error %}
-    Ha habido un error en el formulario.
-    {% endif %}
-</table>
-<br>
-
-<h2>Revisar Resúmenes</h2>
+<div class="d-flex justify-content-between align-items-center mb-3 w-100">
+    <h2 class="mb-0">Revisar Resúmenes</h2>
+    <a href="{% url 'insertar_articulo' %}" class="btn btn-success ms-auto">
+        Insertar nuevo artículo
+    </a>
+</div>
 
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Titulo</th>
-            <th>Url</th>
+            <th style="text-align: center;">Titulo</th>
+            <th style="text-align: center;">Url</th>
             <th></th>
         </tr>
     </thead>

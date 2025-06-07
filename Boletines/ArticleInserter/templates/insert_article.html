@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Administración de Artículos</h1>
+<h2>Insertar Manualmente Artículos nuevos</h2>
+<br>
+<table class="table table-bordered">
+    <form method="post">
+    {% csrf_token %}
+
+    <div>
+        {{ form.title.label_tag }}<br>
+        {{ form.title }}
+    </div>
+
+    <div>
+        {{ form.link.label_tag }}<br>
+        {{ form.link }}
+    </div>
+
+    <div>
+        {{ form.content.label_tag }}<br>
+        {{ form.content }}
+    </div>
+
+    <div>
+        {{ form.summary.label_tag }}<br>
+        {{ form.summary }}
+    </div>
+
+    <button type="submit">Enviar</button>
+    <form><p>
+    {% if send %}
+    El Artículo se ha ingresado exitosamente en la base de datos
+    {% endif %}
+    {% if error %}
+    Ha habido un error en el formulario.
+    {% endif %}
+    </p>
+</table>
+<br>
+
+{% endblock %}
