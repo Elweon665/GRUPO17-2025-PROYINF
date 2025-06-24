@@ -30,8 +30,9 @@ Puede acceder a la Wiki mediante este [enlace](https://github.com/Elweon665/GRUP
 6. Crear un entorno virtual ejecutando `python -m venv .venv` (Este paso solo se tiene que hacer una única vez, no es necesario repetirlo cuando se actualice el repositorio).
 7. Ejecutar `.\Scripts\activate`.
 8. Instalar las dependencias del proyecto ejecutando `pip install -r requirements.txt`.
-9. Ejecutar `python .\Boletines\manage.py runserver`.
-10. Acceder a _http://127.0.0.1:8000/_ desde cualquier navegador y listo!
+9. Insertar la llave secreta (_.env_) en la capeta raíz. Esta llave debe ser solicitada a los contribudores del repositorio.
+10. Ejecutar `python .\Boletines\manage.py runserver`.
+11. Acceder a _http://127.0.0.1:8000/_ desde cualquier navegador y listo!
 
 
 Se continuara el proyecto en Ingenieria de Software(INF225) como grupo 17 compuesto por los mismos integrantes.
